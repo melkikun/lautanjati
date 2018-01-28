@@ -564,7 +564,7 @@ switch ($_POST['type']) {
                                         type: "success"
                                     }, function () {
                                         var invoiceID = response.invoice_id;
-                                        var URL_main = "/LautanJati/pages/lj_menu/invoice_print/invoice_print_old.php?invoice_id=" + invoiceID + "";
+                                        var URL_main = "/LautanJati/pages/lj_menu/invoice_print/invoice_print_old.php?invoice_id=" + invoiceID + "&ppn=" + ppn;
 
                                         var cf1 = confirm("APA ANDA INGIN PRINT INVOICE ASLI?");
                                         if (cf1 == true) {
@@ -576,7 +576,7 @@ switch ($_POST['type']) {
                                                 URL = URL_main + '&show_tlp=true' + '&show_addr=true';
                                             }
                                             PopupCenter(URL, 'popupInfoMPS', '800', '768');
-                                            invoice('CREATE_INVOICE');
+//                                            invoice('CREATE_INVOICE');
                                         } else {
                                             invoice('CREATE_INVOICE');
                                         }

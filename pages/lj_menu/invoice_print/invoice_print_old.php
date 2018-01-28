@@ -16,8 +16,20 @@ EOD;
 $username = $_SESSION['username'];
 $upperUsername = strtoupper($username);
 $invoice_id = $_GET['invoice_id'];
-$show_tlp = $_GET['show_tlp'];
-$show_addr = $_GET['show_addr'];
+$show_tlp = "";
+$show_addr = "";
+if(isset($_GET['show_tlp'])){
+    $show_tlp = $_GET['show_tlp'];
+}else{
+    $show_tlp = "false";
+}
+if(isset($_GET['show_addr'])){
+    $show_addr = $_GET['show_addr'];
+}else{
+    $show_addr = "false";
+}
+
+//$show_addr = $_GET['show_addr'];
 $invoice_data = new invoice_data();
 $invoice_ppn = $_GET['ppn'];
 $response = $invoice_data->getInvoceData($invoice_id, $conn);
@@ -61,7 +73,7 @@ $response = $invoice_data->getInvoceData($invoice_id, $conn);
         </style>
     </head>
     <!--window.close();-->
-    <body onload="window.print();">
+    <body>
         <?php
         for ($looping = 1; $looping <= 5; $looping++) {
             ?>
@@ -374,8 +386,8 @@ $response = $invoice_data->getInvoceData($invoice_id, $conn);
                                             echo "";
                                         } else {
                                              ?>
-                                            <div class="left">Rp </div>
-                                            <div class="right"><?php echo number_format(round($response[0]['INVOICE_DISC']), 2); ?></div>
+                                            <div class="left"></div>
+                                            <div class="right"><?php echo number_format(round($response[0]['INVOICE_DISC']), 2); ?> %</div>
                                             <?php
                                         }
                                         ?>
