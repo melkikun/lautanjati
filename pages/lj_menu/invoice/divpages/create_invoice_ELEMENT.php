@@ -576,7 +576,7 @@ switch ($_POST['type']) {
                                                 URL = URL_main + '&show_tlp=true' + '&show_addr=true';
                                             }
                                             PopupCenter(URL, 'popupInfoMPS', '800', '768');
-//                                            invoice('CREATE_INVOICE');
+                                            invoice('CREATE_INVOICE');
                                         } else {
                                             invoice('CREATE_INVOICE');
                                         }
