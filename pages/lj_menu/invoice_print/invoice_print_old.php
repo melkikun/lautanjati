@@ -73,7 +73,7 @@ $response = $invoice_data->getInvoceData($invoice_id, $conn);
         </style>
     </head>
     <!--window.close();-->
-    <body>
+    <body onload="window.print();">
         <?php
         for ($looping = 1; $looping <= 5; $looping++) {
             ?>
