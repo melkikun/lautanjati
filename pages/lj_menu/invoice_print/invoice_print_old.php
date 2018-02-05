@@ -387,7 +387,7 @@ $response = $invoice_data->getInvoceData($invoice_id, $conn);
                                         } else {
                                              ?>
                                             <div class="left"></div>
-                                            <div class="right"><?php echo number_format(round($response[0]['INVOICE_DISC']), 2); ?> %</div>
+                                            <div class="right"><?php echo number_format(($response[0]['INVOICE_DISC']), 2); ?> %</div>
                                             <?php
                                         }
                                         ?>
